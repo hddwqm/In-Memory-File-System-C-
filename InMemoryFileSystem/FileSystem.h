@@ -8,7 +8,6 @@ public:
 	FileSystem() :root(string("")) {
 	}
 	vector<string> Ls(const string& path) {
-		// IMPLEMENT ME
 		//get path
 		vector<string> folder_path = split(path, '/');		//split input into separate folder name
 		folder* fs_root = &root;
@@ -23,7 +22,7 @@ public:
 				return return_val;
 			}
 		}
-		return it->get_content;
+		return it->get_content();
 	}
 
 	void MkdirP(const string& dir_path) {
