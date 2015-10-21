@@ -9,16 +9,18 @@ private:
 	string name;
 	fs_type type;
 public:
-	fs_base(string name_in, fs_type type_in) {
+	fs_base(string name_in, fs_type type_in) {		//constructor
 		name = name_in;
 		type = type_in;
-	}
-	string get_name() {
+	};
+	string get_name() {			//returns the name
 		return name;
-	}
-	fs_type get_type() {
+	};
+	fs_type get_type() {		//returns the type
 		return type;
+	};
+	virtual fs_base* get_member(string) {
+		return nullptr;
 	}
-	virtual fs_base* get_member(string) = 0;
 	virtual string get_content() = 0;
 };
