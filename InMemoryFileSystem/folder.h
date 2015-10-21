@@ -10,8 +10,11 @@ public:
 			return nullptr;
 		}
 	}
-	folder(string name_in) :fs_base(name_in, fs_base::fs_type::FOLDER) {}
-	string get_content() {
-		return "unfinished";
+	folder(string name_in) :fs_base(name_in, fs_base::fs_type::FOLDER) {};
+
+	vector<string> get_content() {
+		vector<string> return_val;
+		// IMPLEMENT ME
+		return return_val;
 	};
 };

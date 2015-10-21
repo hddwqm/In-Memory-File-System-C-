@@ -22,5 +22,5 @@ public:
 	virtual fs_base* get_member(string) {
 		return nullptr;
 	}
-	virtual string get_content() = 0;
+	virtual vector<string> get_content() = 0;
 };

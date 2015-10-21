@@ -5,24 +5,25 @@ using namespace std;
 class FileSystem {
 	folder root;
 public:
-	FileSystem() :root("") {
+	FileSystem() :root(string("")) {
 	}
 	vector<string> Ls(const string& path) {
 		// IMPLEMENT ME
 		//get path
-		vector<string> folder_path = split(path, '/');
+		vector<string> folder_path = split(path, '/');		//split input into separate folder name
 		folder* fs_root = &root;
 		fs_base* it = &root;
-		for (int index = 0;index < folder_path.size;index++) {
+		for (int index = 0;index < folder_path.size();index++) {
 			if (it->get_member(folder_path[index]) != nullptr) {
 				it = it->get_member(folder_path[index]);
 			}
-			else {
-				// IMPLEMENT ME
+			else {											//return null pointer if there is no such name or if the name represents a file
+				vector<string> return_val;
+				return_val.push_back("folder not found!");
+				return return_val;
 			}
 		}
-		vector<string> output;
-		return output;
+		return it->get_content;
 	}
 
 	void MkdirP(const string& dir_path) {

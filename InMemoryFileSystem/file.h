@@ -8,7 +8,9 @@ public:
 	void change_content(string in) {
 		content = in;
 	}
-	string get_content() {
-		return content;
+	vector<string> get_content() {
+		vector<string> return_val;
+		return_val.push_back(content);
+		return return_val;
 	}
 };
