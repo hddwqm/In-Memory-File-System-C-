@@ -1,15 +1,17 @@
-#pragma once
+
+#include"prjheader.h"
+
 class file : public fs_base {
-	string content;
+	std::string content;
 public:
-	file(string name_in, string content_in = "") :fs_base(name_in, fs_base::fs_type::FILE) {
+	file(std::string name_in, std::string content_in = "") :fs_base(name_in, fs_base::fs_type::FILE) {
 		content = content_in;
 	}
-	void change_content(string in) {
+	void change_content(std::string in) {
 		content = in;
 	}
-	vector<string> get_content() {
-		vector<string> return_val;
+	std::vector<std::string> get_content() {
+		std::vector<std::string> return_val;
 		return_val.push_back(content);
 		return return_val;
 	}

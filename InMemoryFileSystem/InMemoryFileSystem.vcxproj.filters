@@ -32,5 +32,11 @@
     <ClInclude Include="FileSystem.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="prjheader.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="misfunc.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

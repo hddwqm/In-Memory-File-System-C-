@@ -1,15 +1,15 @@
-#pragma once
 
-using namespace std;
+#include"prjheader.h"
+
 
 class FileSystem {
 	folder root;
 public:
-	FileSystem() :root(string("")) {
+	FileSystem() :root(std::string("")) {
 	}
-	vector<string> Ls(const string& path) {
+	std::vector<std::string> Ls(const std::string& path) {
 		//get path
-		vector<string> folder_path = split(path, '/');		//split input into separate folder name
+		std::vector<std::string> folder_path = split(path, '/');		//split input into separate folder name
 		folder* fs_root = &root;
 		fs_base* it = &root;
 		for (int index = 0;index < folder_path.size();index++) {
@@ -17,7 +17,7 @@ public:
 				it = it->get_member(folder_path[index]);
 			}
 			else {											//return null pointer if there is no such name or if the name represents a file
-				vector<string> return_val;
+				std::vector<std::string> return_val;
 				return_val.push_back("folder not found!");
 				return return_val;
 			}
@@ -25,15 +25,23 @@ public:
 		return it->get_content();
 	}
 
-	void MkdirP(const string& dir_path) {
+	void MkdirP(const std::string& dir_path) {
+		std::vector<std::string> folder_path = split(dir_path, '/');
+		fs_base* it = &root;
+		for (int index = 0;index < folder_path.size();index++) {
+			if (it->get_member(folder_path[index]) != nullptr) {
+				it = it->get_member(folder_path[index]);
+			}
+			//else if()
+		}
 		// IMPLEMENT ME
 	}
 
-	void AddFileWithContent(const string& file_path, const string& content) {
+	void AddFileWithContent(const std::string& file_path, const std::string& content) {
 		// IMPLEMENT ME
 	}
 
-	string GetFileContent(const string& file_path) {
+	std::string GetFileContent(const std::string& file_path) {
 		// IMPLEMENT ME
 		return "";
 	}

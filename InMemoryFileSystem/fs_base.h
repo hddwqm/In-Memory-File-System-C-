@@ -1,4 +1,6 @@
-#pragma once
+
+#include"prjheader.h"
+
 
 class fs_base {
 	/*base element of a file system, contains element type and name
@@ -6,21 +8,21 @@ class fs_base {
 	*/
 public:enum fs_type { FILE, FOLDER };
 private:
-	string name;
+	std::string name;
 	fs_type type;
 public:
-	fs_base(string name_in, fs_type type_in) {		//constructor
+	fs_base(std::string name_in, fs_type type_in) {		//constructor
 		name = name_in;
 		type = type_in;
 	};
-	string get_name() {			//returns the name
+	std::string get_name() {			//returns the name
 		return name;
 	};
 	fs_type get_type() {		//returns the type
 		return type;
 	};
-	virtual fs_base* get_member(string) {
+	virtual fs_base* get_member(std::string) {
 		return nullptr;
-	}
-	virtual vector<string> get_content() = 0;
+	};
+	virtual std::vector<std::string> get_content() = 0;
 };

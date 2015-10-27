@@ -125,6 +125,8 @@
     <ClInclude Include="FileSystem.h" />
     <ClInclude Include="folder.h" />
     <ClInclude Include="fs_base.h" />
+    <ClInclude Include="misfunc.h" />
+    <ClInclude Include="prjheader.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
