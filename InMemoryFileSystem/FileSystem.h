@@ -32,7 +32,14 @@ public:
 			if (it->get_member(folder_path[index]) != nullptr) {
 				it = it->get_member(folder_path[index]);
 			}
-			//else if()
+			else if (it->get_type() == fs_base::fs_type::FILE) {
+				return;			//temp
+			}
+			else {
+				class folder* temp = new class folder(folder_path[index]);
+				it->insert_member(folder_path[index], temp);
+				it = temp;
+			}
 		}
 		// IMPLEMENT ME
 	}

@@ -24,6 +24,15 @@ public:
 		}
 	}
 	
+	bool insert_member(std::string name_in, class fs_base* p) {
+		if (content.find(name_in) != content.end()) {
+			return false;
+		}
+		else {
+			content[name_in] = p;
+			return true;
+		}
+	}
 
 	std::vector<std::string> get_content() {
 		std::vector<std::string> return_val;

@@ -24,5 +24,8 @@ public:
 	virtual fs_base* get_member(std::string) {
 		return nullptr;
 	};
+	virtual bool insert_member(std::string, class fs_base *p = nullptr) {
+		return false;
+	};
 	virtual std::vector<std::string> get_content() = 0;
 };
