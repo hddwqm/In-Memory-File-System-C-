@@ -15,17 +15,26 @@ public:
 		name = name_in;
 		type = type_in;
 	};
-	std::string get_name() {			//returns the name
+
+	//returns the name
+	std::string get_name() {			
 		return name;
 	};
-	fs_type get_type() {		//returns the type
+
+	//returns the type
+	fs_type get_type() {		
 		return type;
 	};
+
 	virtual fs_base* get_member(std::string) {
 		return nullptr;
 	};
+
+
 	virtual bool insert_member(std::string, class fs_base *p = nullptr) {
 		return false;
 	};
+
+
 	virtual std::vector<std::string> get_content() = 0;
 };
