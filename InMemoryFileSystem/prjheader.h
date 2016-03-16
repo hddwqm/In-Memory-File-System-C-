@@ -5,6 +5,7 @@
 #include <sstream>
 #include <string>
 #include <vector>
+#include <tuple>
 
 #include "misfunc.h"
 #include "fs_base.h"
