@@ -31,22 +31,34 @@ int main(int argc, char* argv[]) {
 	do {
 		std::cout << ">";
 		std::cin >> command;
-		std::cin >> path;
-		if (path.find_first_not_of("abcdefghijklmnopqrstuvwxyz/") != std::string::npos) {
-			std::cout << "Illegal path." << std::endl;
-		}
-		else if (command == "ls") {
+		if (command == "ls") {
+			std::cin >> path;
+			if (path.find_first_not_of("abcdefghijklmnopqrstuvwxyz/") != std::string::npos) {
+				std::cout << "Illegal path." << std::endl;
+			}
 			std::cout << join(fs.Ls(path)) << std::endl;
 		}
 		else if (command == "mkdir") {
+			std::cin >> path;
+			if (path.find_first_not_of("abcdefghijklmnopqrstuvwxyz/") != std::string::npos) {
+				std::cout << "Illegal path." << std::endl;
+			}
 			fs.MkdirP(path);
 		}
 		else if (command == "add") {
+			std::cin >> path;
+			if (path.find_first_not_of("abcdefghijklmnopqrstuvwxyz/") != std::string::npos) {
+				std::cout << "Illegal path." << std::endl;
+			}
 			std::string in = "";
 			std::cin >> in;
 			fs.AddFileWithContent(path, in);
 		}
 		else if (command == "show") {
+			std::cin >> path;
+			if (path.find_first_not_of("abcdefghijklmnopqrstuvwxyz/") != std::string::npos) {
+				std::cout << "Illegal path." << std::endl;
+			}
 			std::cout << fs.GetFileContent(path) << std::endl;
 		}
 		else if (command == "end") {
